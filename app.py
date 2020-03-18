@@ -15,10 +15,8 @@ with open('Models/svm_clf_model.pkl', 'rb') as f:
     svm_model = pickle.load(f)
 
 
-def get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar,
-    resting_ele, heart_rate, blood, slope, flourosopy, detect, req_model):
-    mylist = [age, sex, chest_pain, rest_blood, fasting_blood_sugar,
-    resting_ele, heart_rate, blood, slope, flourosopy, detect]
+def get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar, resting_ele, heart_rate, blood, slope, flourosopy, detect, req_model):
+    mylist = [age, sex, chest_pain, rest_blood, fasting_blood_sugar, resting_ele, heart_rate, blood, slope, flourosopy, detect]
     mylist = [float(i) for i in mylist]
     vals = [mylist]
 
@@ -61,8 +59,7 @@ def my_form_post():
 
     req_model = request.form['req_model']
 
-    target = get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar,
-    resting_ele, heart_rate, blood, slope, flourosopy, detect, req_model)
+    target = get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar, resting_ele, heart_rate, blood, slope, flourosopy, detect, req_model)
 
     if target==1:
         sale_making = 'Customer is likely to buy the insurance'
