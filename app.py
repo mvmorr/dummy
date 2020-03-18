@@ -15,8 +15,10 @@ with open('Models/svm_clf_model.pkl', 'rb') as f:
     svm_model = pickle.load(f)
 
 
-def get_predictions(price, Tax, Driver_Age, Licence_Length_Years, req_model):
-    mylist = [Driver_Age, Tax, price, Licence_Length_Years]
+def get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar,
+    resting_ele, heart_rate, blood, slope, flourosopy, detect, req_model):
+    mylist = [age, sex, chest_pain, rest_blood, fasting_blood_sugar,
+    resting_ele, heart_rate, blood, slope, flourosopy, detect]
     mylist = [float(i) for i in mylist]
     vals = [mylist]
 
@@ -43,13 +45,24 @@ def my_form():
 
 @app.route('/', methods=['POST', 'GET'])
 def my_form_post():
-    price = request.form['price']
-    Tax = request.form['Tax']
-    Driver_Age = request.form['Driver_Age']
-    Licence_Length_Years = request.form['Licence_Length_Years']
+    age = request.form['age']
+    sex = request.form['sex']
+    chest_pain = request.form['chest_pain']
+    rest_blood = request.form['rest_blood']
+    fasting_blood_sugar = request.form['fasting_blood_sugar']
+    resting_ele = request.form['resting_ele']
+    heart_rate = request.form['heart_rate']
+    blood = request.form['blood']
+
+    slope = request.form['slope']
+    flourosopy = request.form['flourosopy']
+    detect = request.form['detect']
+
+
     req_model = request.form['req_model']
 
-    target = get_predictions(price, Tax, Driver_Age, Licence_Length_Years, req_model)
+    target = get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar,
+    resting_ele, heart_rate, blood, slope, flourosopy, detect, req_model)
 
     if target==1:
         sale_making = 'Customer is likely to buy the insurance'
