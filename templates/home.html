@@ -45,12 +45,14 @@ div {
 
   <form method="POST">
   <form action="/action_page.php">
-      <label for="age"></label>
+    <label for="age"></label>
     <input type="number" id="age" name="age" placeholder="Age (between 18 and 70)" min="20" max="80" step="1" required size="35">
+
     <select name="sex">
         <option value="1">Male</option>
         <option value="0">Female</option>
     </select>
+
     <select name="chest_pain">
         <option value="0">0</option>
         <option value="3">3</option>
@@ -58,41 +60,47 @@ div {
         <option value="1">1</option>
     </select>
 
-      <label for="rest_blood"></label>
+    <label for="rest_blood"></label>
     <input type="number" id="rest_blood" name="rest_blood" placeholder="Resting Blood Pressure (between 90 and 210)" min="90" max="210" step="0.1" required size="35">
+
     <label for="chol"></label>
     <input type="number" id="chol" name="chol" placeholder="Cholestoral in mg (between 120 and 560)" min="120" max="560" step="0.1" required size="35">
 
-      <select name="fasting_blood_sugar">
+    <select name="fasting_blood_sugar">
         <option value="1">1</option>
         <option value="0">0</option>
     </select>
-      <select name="resting_ele">
+
+    <select name="resting_ele">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
     </select>
+
     <label for="heart_rate"></label>
     <input type="number" id="heart_rate" name="heart_rate" placeholder="Heart Rate (between 70 and 202)" min="70" max="202" step="0.1" required size="35">
+
     <select name="exercise">
         <option value="1">yes</option>
         <option value="0">no</option>
     </select>
-      <label for="blood"></label>
-      <input type="number" id="blood" name="blood" placeholder="0.0 to 7.0" step="0.01" min="0" max="10" required size="35">
+    <label for="blood"></label>
+    <input type="number" id="blood" name="blood" placeholder="0.0 to 7.0" step="0.01" min="0" max="10" required size="35">
+
     <select name="slope">
         <option value="2">2</option>
         <option value="1">1</option>
         <option value="0">0</option>
     </select>
-      <select name="flourosopy">
+
+    <select name="flourosopy">
         <option value="4">4</option>
         <option value="3">3</option>
         <option value="2">2</option>
         <option value="1">1</option>
         <option value="0">0</option>
     </select>
-      <select name="detect">
+    <select name="detect">
         <option value="3">3</option>
         <option value="2">2</option>
         <option value="1">1</option>
@@ -102,7 +110,7 @@ div {
 
 
     <select name="req_model">
-    <option value="RandomForest">Random Forest</option>
+        <option value="RandomForest">Random Forest</option>
   </select>
 
 
