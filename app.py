@@ -5,14 +5,14 @@ import pickle
 print(os.getcwd())
 path = os.getcwd()
 
-with open('Models/logistic_model.pkl', 'rb') as f:
-    logistic = pickle.load(f)
+# with open('Models/logistic_model.pkl', 'rb') as f:
+#     logistic = pickle.load(f)
 
 with open('Models/rf1_model.pkl', 'rb') as f:
     randomforest = pickle.load(f)
 
-with open('Models/svm_clf_model.pkl', 'rb') as f:
-    svm_model = pickle.load(f)
+# with open('Models/svm_clf_model.pkl', 'rb') as f:
+#     svm_model = pickle.load(f)
 
 
 def get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar, resting_ele, heart_rate, blood, slope, flourosopy, detect, req_model):
@@ -20,17 +20,17 @@ def get_predictions(age, sex, chest_pain, rest_blood, fasting_blood_sugar, resti
     mylist = [float(i) for i in mylist]
     vals = [mylist]
 
-    if req_model == 'Logistic':
-        #print(req_model)
-        return logistic.predict(vals)[0]
+    # if req_model == 'Logistic':
+    #     #print(req_model)
+    #     return logistic.predict(vals)[0]
 
-    elif req_model == 'RandomForest':
+    if req_model == 'RandomForest':
         #print(req_model)
         return randomforest.predict(vals)[0]
 
-    elif req_model == 'SVM':
-        #print(req_model)
-        return svm_model.predict(vals)[0]
+    # elif req_model == 'SVM':
+    #     #print(req_model)
+    #     return svm_model.predict(vals)[0]
     else:
         return "Cannot Predict"
 
